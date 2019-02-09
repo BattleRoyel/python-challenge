@@ -13,39 +13,62 @@ with open(csvpath, newline='') as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
     # Read each row of data after the header
+
+
+    Date_column = []
+    Profit_loss = []
+   
     for row in csvreader:
-        print(row)
-
-budgetCSV = os.path.join('..', 'Resources', 'budget_data.csv')
-
+        # print(row[0])
+        Date_column.append(row[0])
+        Profit_loss.append(row[1])
 #The total number of months included in the dataset
-def budgetsummary(profit_lose):
-    profit_lose = csv_header
-
-    totalmonths = int(profit_lose[1])
-    print(f"Total Months: {sum(int(totalmonths))}")
+print(f'total months:{len(Date_column)}')
 
 #The net total amount of "Profit/Losses" over the entire period
-    nettotal = int(profit_lose[2])
-    print(f"Total: {sum(int(nettotal)}")
+print(f'total amount: {int(sum(Profit_loss))}')
 
 #The average of the changes in "Profit/Losses" over the entire period
-    averagetotal = nettotal / (totalmonths -1)
-    print(f"Average Change: {int(averagetotal)}")
+print(f'Average Change:{sum(Profit_loss)} / {len(Date_column)}')
 
 #The greatest increase in profits (date and amount) over the entire period
+print
 
-
-Display_Budget = input("Would you like to see the budget Report? ")
-
-for row in budgetCSV:
-    if (Display_Budget == "yes"):
-        print(budgetsummary)
-
-#The greatest increase in profits (date and amount) over the entire period
 #The greatest decrease in losses (date and amount) over the entire period
-    if csv_header[1] = csv_header[1] -1
-    csv_header[2] -csv_header[2]
-    print(max(nettotal))
-    print(min(nettotal))
+
+
+
+
+#The total number of months included in the dataset
+# def budgetsummary(profit_lose):
+
+#         totalmonths = int(profit_lose[1])
+#     print(f"Total Months: {sum(int(totalmonths))}")
+
+# #The net total amount of "Profit/Losses" over the entire period
+#     nettotal = int(profit_lose[2])
+#     print(f"Total: {sum(int(nettotal)}")
+
+# #The average of the changes in "Profit/Losses" over the entire period
+#     averagetotal = nettotal / (totalmonths -1)
+#     print(f"Average Change: {int(averagetotal)}")
+
+# #The greatest increase in profits (date and amount) over the entire period
+
+
+# Display_Budget = input("Would you like to see the budget Report? ")
+
+# for row in budgetCSV:
+#     if (Display_Budget == "yes"):
+#         print(budgetsummary)
+
+# #The greatest increase in profits (date and amount) over the entire period
+# #The greatest decrease in losses (date and amount) over the entire period
+#     if csv_header[1] = csv_header[1] -1
+#     csv_header[2] -csv_header[2]
+#     print(max(nettotal))
+#     print(min(nettotal))
  
+
+
+
